@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import {StationService} from "../services/station-service.service";
 import {Station} from "../entities/station";
 
@@ -9,12 +10,19 @@ import {Station} from "../entities/station";
 })
 export class StationDetailsComponent implements OnInit {
 
-  station: Station = {id: 1, address: '', status: true}
+  station: Station = {id: 1, address: '', status: true};
+  id: number = 1;
 
-  constructor(private stationService:StationService) { }
+  constructor(private stationService:StationService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.stationService.getStationsById(1).subscribe((st: Station) => {
+
+    this.route.paramMap.subscribe(params => {
+      this.id = Number(params.get('id'));
+
+    });
+
+      this.stationService.getStationsById(this.id).subscribe((st: Station) => {
       this.station = st;
     })
   }
