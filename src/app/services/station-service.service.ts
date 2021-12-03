@@ -15,6 +15,6 @@ export class StationService {
     }
 
     public getStationsById(id: number): Observable<Station> {
-      return this.http.get<Station>(`http://127.0.0.1:8082/stations/${id}`)
+      return this.http.get<Station>(`http://127.0.0.1:8082/stations/${id}/metrics`)
     }
 }

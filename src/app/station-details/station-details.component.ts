@@ -19,7 +19,6 @@ export class StationDetailsComponent implements OnInit {
 
     this.route.paramMap.subscribe(params => {
       this.id = Number(params.get('id'));
-
     });
 
       this.stationService.getStationsById(this.id).subscribe((st: Station) => {

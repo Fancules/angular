@@ -1,0 +1,11 @@
+.station {
+  font-weight: bold;
+}
+.address {
+  text-decoration: underline;
+}
+a {
+  text-decoration: none;
+  color: deeppink;
+  font-weight: bolder;
+}
