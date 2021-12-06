@@ -10,7 +10,7 @@ import {Station} from "../entities/station";
 export class StationListComponent implements OnInit {
   stations: Station[] = [];
 
-  constructor(private stationService:StationService ) { }
+  constructor(private stationService: StationService ) { }
 
   ngOnInit(): void {
     this.stationService.getStations().subscribe((sr: Station[]) => {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import {StationService} from "../services/station-service.service";
+import { ActivatedRoute } from '@angular/router';
+import { StationService } from "../services/station-service.service";
+import { Metric } from "../entities/metric";
 import {Station} from "../entities/station";
 
 @Component({
@@ -10,7 +11,8 @@ import {Station} from "../entities/station";
 })
 export class StationDetailsComponent implements OnInit {
 
-  station: Station = {id: 1, address: '', status: true};
+  metrics: Metric[] = [];
+  station: Station = {id: 1, address: '', status : true};
   id: number = 1;
 
   constructor(private stationService:StationService, private route: ActivatedRoute) { }
@@ -18,12 +20,17 @@ export class StationDetailsComponent implements OnInit {
   ngOnInit(): void {
 
     this.route.paramMap.subscribe(params => {
+
       this.id = Number(params.get('id'));
+
+      this.stationService.getMetricsByStationId(this.id).subscribe((mts: Metric[]) => {
+        this.metrics = mts;
+        this.station = mts[0].station;
+      })
+
     });
 
-      this.stationService.getStationsById(this.id).subscribe((st: Station) => {
-      this.station = st;
-    })
+
   }
 
 }

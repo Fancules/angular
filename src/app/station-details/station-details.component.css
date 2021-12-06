@@ -1,0 +1,17 @@
+table {
+  border-collapse: collapse;
+  width: 500px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+.no-metrics {
+  font-size: 28px;
+}
+
+td {
+  text-align: center;
+}
+

@@ -1,8 +1,23 @@
-<p>station-details works!</p>
-<div>
-  {{station.id}}
-</div>
-<div>
-  {{station.address}}
-</div>
+<h2>Station: {{station.id}}</h2>
+<div>Address: {{station.address}}</div>
 
+<h2>Metrics:</h2>
+<div *ngIf="metrics.length > 0; else noMetrics">
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Value</th>
+        <th>Time</th>
+      </tr>
+      <tr *ngFor="let m of metrics">
+        <td>{{m.id}}</td>
+        <td>{{m.value}}</td>
+        <td>{{m.time | date:'dd/MM/YYYY HH:mm:ss'}}</td>
+      </tr>
+    </table>
+  </div>
+  <ng-template #noMetrics>
+    <p class="no-metrics">
+      Metrics have not found
+    </p>
+  </ng-template>
