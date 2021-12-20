@@ -1,5 +1,6 @@
 export interface Station {
   id: number,
   address: string,
-  status: boolean
+  status: boolean,
+  value?: number
 }

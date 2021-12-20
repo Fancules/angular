@@ -1,5 +1,12 @@
-<ul>
-  <li *ngFor="let stat of stations">
-    <app-station [station]="stat"></app-station>
-  </li>
-</ul>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Address</th>
+    <th>Value</th>
+  </tr>
+  <tr *ngFor="let stat of stations">
+    <td>{{stat.id}}</td>
+    <td>{{stat.address}}</td>
+    <td>145</td>
+  </tr>
+</table>

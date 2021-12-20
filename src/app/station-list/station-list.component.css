@@ -6,4 +6,17 @@ li {
   width: 500px;
 }
 
+table {
+  border-collapse: collapse;
+  width: 500px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+td {
+  text-align: center;
+}
+
 
