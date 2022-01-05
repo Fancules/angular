@@ -9,6 +9,7 @@ import { StationDetailsComponent } from './station-details/station-details.compo
 import { AppRoutingModule } from "./app-routing.module";
 import { AddStationComponent } from './add-station/add-station.component';
 import { ReactiveFormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ReactiveFormsModule } from "@angular/forms";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule
   ],

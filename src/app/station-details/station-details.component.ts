@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { StationService } from "../services/station-service.service";
+import { StationServiceService } from "../services/station-service.service";
 import { Metric } from "../entities/metric";
 import {Station} from "../entities/station";
 
@@ -15,7 +15,7 @@ export class StationDetailsComponent implements OnInit {
   station: Station = {id: 1, address: '', status : true};
   id: number = 1;
 
-  constructor(private stationService:StationService, private route: ActivatedRoute) { }
+  constructor(private stationService:StationServiceService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 

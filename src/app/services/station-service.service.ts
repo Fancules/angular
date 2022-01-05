@@ -7,7 +7,7 @@ import {Metric} from "../entities/metric";
 @Injectable({
   providedIn: 'root'
 })
-export class StationService {
+export class StationServiceService {
 
   constructor(private http: HttpClient) { }
 
@@ -24,5 +24,8 @@ export class StationService {
       return this.http.get<Metric[]>(`http://127.0.0.1:8082/stations/${id}/metrics`)
     }
 
+  public getLatestValues(): Observable<any[]> {
+    return this.http.get<any[]>(`http://127.0.0.1:8082/metrics/latest`)
+  }
 
 }

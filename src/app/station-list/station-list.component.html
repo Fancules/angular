@@ -4,9 +4,9 @@
     <th>Address</th>
     <th>Value</th>
   </tr>
-  <tr *ngFor="let stat of stations">
+  <tr *ngFor="let stat of stations" [@flyIn]="'in'">
     <td>{{stat.id}}</td>
     <td>{{stat.address}}</td>
-    <td>145</td>
+    <td>{{stat.value}}</td>
   </tr>
 </table>

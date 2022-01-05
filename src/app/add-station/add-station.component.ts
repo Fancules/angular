@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {StationService} from "../services/station-service.service";
+import {StationServiceService} from "../services/station-service.service";
 
 @Component({
   selector: 'app-add-station',
@@ -11,11 +11,11 @@ export class AddStationComponent implements OnInit {
 
   stationForm = new FormGroup({
     name: new FormControl(''),
-    address: new FormControl(''),
+    email: new FormControl(''),
     status: new FormControl(true)
   });
 
-  constructor(private stationService: StationService ) { }
+  constructor(private stationService: StationServiceService ) { }
 
   ngOnInit(): void {
   }
